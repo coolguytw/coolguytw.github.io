@@ -25,20 +25,19 @@
 					
 					<ul class="actions">
 						<!-- <li><a href="#" class="button primary icon solid fa-download">Download</a></li> -->
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">下載按鈕在下面 Download Link at Bottom</a></li>
+						<li><a href="#propaganda" class="button icon solid fa-chevron-down scrolly">下載按鈕在下面 Download Link at Bottom</a></li>
 					</ul>
 				</div>
 				<div class="image phone"><div class="inner"><img src="images/screen.jpeg" alt="" /></div></div>
 			</header>
 
-		<!-- One -->
-			<section id="one" class="wrapper style2 special">
-				<h2><b>工商服務時間ADS</b></h2>
-				<p>借我點時間宣傳一下，合理吧XDD<br/>拜託看一下啦</p>
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="wrapper">
+		<!-- Propaganda -->
+			<section id="propaganda" class="wrapper style2">
+				<div class="inner" style="text-align:center;">
+					<h2><b>PROPAGANDA</b></h2>
+					<p>借我點時間宣傳一下，合理吧 XDD<br/>拜託幫忙看一下啦<br/>有活動需要幫忙宣傳的也歡迎來 <a href="https://coolcans.blogspot.com/p/contact.html" target="_blank">這邊</a> 告知喔</p>
+					<hr/>
+				</div>
 				<div class="inner alt">
 					<section class="spotlight">
 						<div class="image"><img src="images/pic01.jpg" alt="" /></div>
@@ -47,12 +46,32 @@
 							<p>感謝好運企鵝讓大家的期中都安然度過<br/>還會毛毛澎澎又香香<br/>Good luck with your midterm exam ~</p>
 						</div>
 					</section>
+					
+					<section class="spotlight">
+						<div class="image"><a href="https://www.facebook.com/NDHUCEC/posts/3633731033367458">
+							<img src="images/pic02.png" alt="https://www.google.com" />
+						</a></div>
+						<div class="content">
+							<h3><a href="https://www.facebook.com/NDHUCEC/posts/3633731033367458">【轉】東華學生自治選舉開始囉</a></h3>
+							<p>國立東華大學第十屆學生自治會選舉報名開跑啦<br/>東華的大家一起來參與<br/>一起來締造東華學生自治嶄新的一頁吧</p>
+						</div>
+					</section>
+					
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/pic03.png" alt="https://www.google.com" />
+						</div>
+						<div class="content">
+							<h3>Seed Projects | Crowdsource by Google</h3>
+							<p>站長我最近成為 Crowdsource by Google 的臺灣種子啦<br/>近期將有贈禮活動出爐<br/>拜託大家持續關注囉感恩</p>
+						</div>
+					</section>
 				</div>
 			</section>
 
-		<!-- Three -->
-			<section id="three" class="wrapper style2 special">
-				<h2><b>FILE DOWNLOAD</b></h2>
+		<!-- File Downloads -->
+			<section id="filedowns" class="wrapper style2 special">
+				<h2><b>FILE DOWNLOADS</b></h2>
 				<div class="inner">
 				<div class="table-wrapper">
 					<table>
@@ -120,12 +139,12 @@
 				}
 				
 				function gotoNextURL(){
-					var url = location.href;	//先取得網址字串
-					if(url.indexOf('?')!=-1){	//再來用去尋找網址列中是否有資料傳遞(QueryString)
+					var url = location.href;
+					if(url.indexOf('?')!=-1){
 						var nextURL = "";
-						var ary = url.split('?')[1].split('&');	//在此直接將各自的參數資料切割放進ary中
-						for(i=0;i<=ary.length-1;i++){			//下迴圈去搜尋每個資料參數
-							if(ary[i].split('=')[0] == 'continue')	//如果資料名稱為id的話那就把他取出來
+						var ary = url.split('?')[1].split('&');
+						for(i=0;i<=ary.length-1;i++){
+							if(ary[i].split('=')[0] == 'continue')
 								nextURL = ary[i].split('=')[1];
 						}
 					}
