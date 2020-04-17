@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>酷冠子下載服務</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+		<link href="favicon.ico" rel="bookmark"/>
+		<link href="apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><div id="getFileName_title"></div></h1>
+					<p>酷冠子BLOG</p>
+					
+					<ul class="actions">
+						<!-- <li><a href="#" class="button primary icon solid fa-download">Download</a></li> -->
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">下載按鈕在下面 Download Link at Bottom</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="images/screen.jpeg" alt="" /></div></div>
+			</header>
+
+		<!-- One -->
+			<section id="one" class="wrapper style2 special">
+				<h2><b>工商服務時間ADS</b></h2>
+				<p>借我點時間宣傳一下，合理吧XDD<br/>拜託看一下啦</p>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper">
+				<div class="inner alt">
+					<section class="spotlight">
+						<div class="image"><img src="images/logo.png" alt="" /></div>
+						<div class="content">
+							<h3>測試中 NA</h3>
+							<p>測試中 BANANA BANANA</p>
+						</div>
+					</section>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2 special">
+				<h2><b>FILE DOWNLOAD</b></h2>
+				<div class="inner">
+				<div class="table-wrapper">
+					<table>
+
+						<tbody>
+							<tr>
+								<td>檔案名稱 File Name</td>
+								<td><div id="getFileName"></div></td>
+							</tr>
+							<tr>
+								<td>隸屬課程 Course</td>
+								<td><div id="getFileSubject"></div></td>
+							</tr>
+							<tr>
+								<td>詳細資料 Details</td>
+								<td><div id="getFileDetail"></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br/>
+				<a onclick="gotoNextURL()" class="button primary fit icon solid fa-download">檔案下載 Download</a>
+				<br/><br/>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; Copyright <a href="https://coolcans.blogspot.com">酷冠子BLOG</a> All Rights Reserved</p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				window.onload=showFileInfo;
+				function showFileInfo(){
+					var url = location.href;
+					if(url.indexOf('?')!=-1){
+						var fileName = "";
+						var fileSubject = "";
+						var fileDetail = "";
+						var ary = url.split('?')[1].split('&');
+						for(i=0;i<=ary.length-1;i++){
+							if(ary[i].split('=')[0] == 'fileName'){
+								fileName = ary[i].split('=')[1];
+							}
+							if(ary[i].split('=')[0] == 'fileSubject'){
+								fileSubject = ary[i].split('=')[1];
+							}
+							if(ary[i].split('=')[0] == 'fileDetail'){
+								fileDetail = ary[i].split('=')[1];
+							}
+						}
+					}
+					document.getElementById("getFileName").innerHTML = fileName;
+					document.getElementById("getFileName_title").innerHTML = fileName;
+					document.getElementById("getFileSubject").innerHTML = fileSubject;
+					document.getElementById("getFileDetail").innerHTML = fileDetail;
+				}
+				
+				function gotoNextURL(){
+					var url = location.href;	//先取得網址字串
+					if(url.indexOf('?')!=-1){	//再來用去尋找網址列中是否有資料傳遞(QueryString)
+						var nextURL = "";
+						var ary = url.split('?')[1].split('&');	//在此直接將各自的參數資料切割放進ary中
+						for(i=0;i<=ary.length-1;i++){			//下迴圈去搜尋每個資料參數
+							if(ary[i].split('=')[0] == 'continue')	//如果資料名稱為id的話那就把他取出來
+								nextURL = ary[i].split('=')[1];
+						}
+					}
+					window.location.href=nextURL;
+				}
+			</script>
+	</body>
+</html>
