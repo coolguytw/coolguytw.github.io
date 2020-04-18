@@ -149,7 +149,12 @@
 								nextURL = ary[i].split('=')[1];
 						}
 					}
-					window.location.href=nextURL;
+					if(!nextURL){
+						alert("糟糕!\n連結無效\n請洽詢酷哥\n\nOops!\nInvalid link.\nPlease contact the webmaster CoolGuy.");
+					}
+					else{
+						window.location.href=nextURL;
+					}
 				}
 			</script>
 	</body>
