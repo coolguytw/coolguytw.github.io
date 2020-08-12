@@ -9,9 +9,9 @@
 	<link href="assets/icons/favicon.ico" rel="bookmark"/>
 	<link href="assets/icons/apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
 </head>
-<frameset rows="*">
-	<frameset cols="*">
-		<frame marginheight="0" name="start" noresize scrolling="auto" src="welcome.html">
+<frameset rows="1">
+	<frameset cols="1">
+		<frame name="start" noresize scrolling="auto" src="welcome.html">
 	</frameset>
 	<noframes>
 		<body>
@@ -19,4 +19,15 @@
 		</body>
 	</noframes>
 </frameset>
+
+<script language=JavaScript>
+window.onload = checkMobile;
+	function checkMobile{
+	   if(navigator.userAgent.match(/Android|iPhone|iPad/i)) {
+	   window.location = 'welcome.html'
+	   }
+	}
+</script>
+
+<!-- Version 2020-08-12 2124 -->
 </html>
