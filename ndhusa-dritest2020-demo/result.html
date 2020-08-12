@@ -194,9 +194,29 @@
 					
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800"><b><span id="getStatusTitle">成績計算中...</span></b></h1>
-          <p class="mb-4"><span id="getStatusDescribe">請稍候...</span></p>
+          <p class="mb-4">
+		  <span id="getStatusDescribe">請稍候...</span>
+		  </p>
 
           <div class="row">
+
+            <!-- PersonInfo -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><span id="getTimeNow">請稍候...</span></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="getStdId2">請稍候...</span> 同學</div>
+                    </div>
+                    <div class="col-auto">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <!-- 正確率 -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -414,6 +434,7 @@
                             if (ary[i].split("=")[0] == "si") {
                                 var stdId = ary[i].split("=")[1];
 								document.getElementById("getStdId").innerHTML = stdId + " 同學";
+								document.getElementById("getStdId2").innerHTML = stdId;
                             }
                             if (ary[i].split("=")[0] == "q1") {
                                 var a1 = ary[i].split("=")[1];
@@ -448,6 +469,13 @@
 						document.getElementById("getStatusTitle").innerHTML = "挑戰失敗QQ";
 						document.getElementById("getStatusDescribe").innerHTML = '別氣餒 !!<br>看完下面得的詳細說明後，<a href="start.html">再試一次吧</a> !!';
 					}
+					
+					var months = "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC".split(",");
+					var today = new Date();
+					//var currentDateTime = today
+					var currentDateTime = months[today.getMonth()]+"-"+ today.getDate()+"-"+ today.getFullYear() +" "+ today.getHours()+":"+today.getMinutes();
+
+					document.getElementById("getTimeNow").innerHTML = currentDateTime;
                 }
             </script>
         </div>
