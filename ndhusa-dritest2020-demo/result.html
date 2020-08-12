@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <title>Result</title>
+        <!-- Custom fonts for this template-->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Custom styles for this template-->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <script language="javascript">
+            function myfun() {
+            jQuery.$('.sidebar .collapse').collapse('hide');
+        </script>
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <!-- Sidebar - Brand -->
+                <li style="list-style: none; display: inline;">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                        <div class="sidebar-brand-icon rotate-n-15">
+                            <i class="fas fa-laugh-wink"></i>
+                        </div>
+                        <div class="sidebar-brand-text mx-3">
+                            <sub>東華學生會</sub><br />
+                            道路安全測驗
+                        </div>
+                    </a>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider my-0" />
+                    <!-- Nav Item - Dashboard -->
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link"><i class="fas fa-fw fa-tachometer-alt"></i> <span>恭喜完成 !!</span></a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0" />
+                <li class="nav-item">
+                    <a aria-controls="collapseTwo" aria-expanded="true" class="nav-link collapsed" data-target="#collapseTwo" data-toggle="collapse" href="#"><i class="fas fa-fw fa-cog"></i> <span>相關資源</span></a>
+                    <div aria-labelledby="headingTwo" class="collapse" data-parent="#accordionSidebar" id="collapseTwo">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="#">AAA</a> <a class="collapse-item" href="#">BBB</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0" />
+                <li class="nav-item">
+                    <a aria-controls="collapseUs" aria-expanded="true" class="nav-link collapsed" data-target="#collapseUs" data-toggle="collapse" href="#"><i class="fas fa-fw fa-cog"></i> <span>關於我們</span></a>
+                    <div aria-labelledby="headingUs" class="collapse" data-parent="#accordionSidebar" id="collapseUs">
+                        <div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header" align="center">製作團隊</h6>
+                            <p align="center">就我們啦</p>
+							
+                        </div>
+                    </div>
+                </li>
+                <!-- Sidebar Toggler (Sidebar) -->
+				<!--
+                <li style="list-style: none; display: inline;">
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
+                </li>
+				-->
+            </ul>
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div class="d-flex flex-column" id="content-wrapper">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop"><i class="fa fa-bars"></i></button>
+                        <!-- Topbar Search -->
+                    <!--
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                  <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+					-->
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) ==
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!== Dropdown - Messages ==
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated==grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                  <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </li>
+            
+                    -->
+                            <!-- Nav Item - Alerts -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="alertsDropdown" role="button">
+                                    <i class="fas fa-bell fa-fw"></i>
+                                    <!-- Counter - Alerts -->
+                                    <span class="badge badge-danger badge-counter">+</span>
+                                </a>
+                                <!-- Dropdown - Alerts -->
+                                <div aria-labelledby="alertsDropdown" class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                                    <h6 class="dropdown-header">Alerts Center</h6>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="mr-3">
+                                            <div class="icon-circle bg-primary">
+                                                <i class="fas fa-file-alt text-white"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">
+                                                August 11, 2020
+                                            </div>
+                                            <span class="font-weight-bold">哈囉你好嗎~衷心感謝~</span>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                </div>
+                            </li>
+                            <!-- Nav Item - Messages -->
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="messagesDropdown" role="button">
+                                    <i class="fas fa-envelope fa-fw"></i>
+                                    <!-- Counter - Messages -->
+                                    <span class="badge badge-danger badge-counter">+</span>
+                                </a>
+                                <!-- Dropdown - Messages -->
+                                <div aria-labelledby="messagesDropdown" class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                                    <h6 class="dropdown-header">Message Center</h6>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img alt="" class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" />
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">
+                                                歡迎加入東華大家庭.
+                                            </div>
+                                            <div class="small text-gray-500">
+                                                學生會副會長 哲豪 · 58m
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                </div>
+                            </li>
+                            <li style="list-style: none; display: inline;">
+                                <div class="topbar-divider d-none d-sm-block"></div>
+                                <!-- Nav Item - User Information -->
+                            </li>
+                            <li class="nav-item dropdown no-arrow">
+                                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="userDropdown" role="button">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="getStdId">東華新生</span> <img class="img-profile rounded-circle" src="https://www.ndhu.edu.tw/var/file/0/1000/img/8/LOGO_NDHU.png" />
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div aria-labelledby="userDropdown" class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End of Topbar -->
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+					
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800"><span id="getStatusTitle">成績計算中...</span></h1>
+          <p class="mb-4"><span id="getStatusDescribe">請稍候...</span></p>
+
+          <div class="row">
+
+            <!-- 正確率 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">正確率</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="getScorePercentage"></span> %</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 作答狀況 -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">作答狀況</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="getScoreCorrect"></span>對  <span id="getScoreWrong"></span>錯</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+			
+          </div>
+
+          <div class="row">
+		  
+                        <!-- Content Row -->
+                        <div class="row">
+						<div class="col-xl-6 col-lg-7">
+                            <!-- Q1 -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Q1 情境題</h6>
+                                </div>
+                                <div class="card-body">
+                                    請觀看這個畫面<br /><br />
+                                    請問接下來這位同學<br />
+									很可能會發生什麼事情呢?<br />
+                                    <br />
+									您的答案 <span id="getA1"></span><br />
+									正確答案 A<br />
+                                    <br />
+									[A] XXX<br />
+									[B] XXXX
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xl-6 col-lg-5">
+                            <!-- Q1 - Video -->
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <video width="100%" loop="true" controls="controls">
+                                        <source src="question/media/4y.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+							
+							
+                        </div>
+						</div>
+                        <div class="row"></div>
+						
+						<hr>
+                        <div class="row">
+						<div class="col-xl-6 col-lg-7">
+                            <!-- Q2 -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Q2 情境題</h6>
+                                </div>
+                                <div class="card-body">
+                                    請觀看這個畫面<br /><br />
+                                    請問接下來這位同學<br />
+									很可能會發生什麼事情呢?<br />
+									<br />
+									您的答案 <span id="getA2"></span><br />
+									正確答案 A<br />
+                                    <br />
+									[A] XXX<br />
+									[B] XXXX
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xl-6 col-lg-5">
+                            <!-- Q2 - Video -->
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <video width="100%" loop="true" controls="controls">
+                                        <source src="question/media/4y.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+							
+							
+                        </div>
+						</div>
+						
+						
+						
+						<hr>
+                        <div class="row">
+						<div class="col-xl-6 col-lg-7">
+                            <!-- Q3 -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Q3 情境題</h6>
+                                </div>
+                                <div class="card-body">
+                                    請觀看這個畫面<br /><br />
+                                    請問接下來這位同學<br />
+									很可能會發生什麼事情呢?<br />
+									<br />
+									您的答案 <span id="getA3"></span><br />
+									正確答案 B<br />
+                                    <br />
+									[A] XXX<br />
+									[B] XXXX
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xl-6 col-lg-5">
+                            <!-- Q3 - Video -->
+                            <div class="card shadow mb-4">
+                                <div class="card-body">
+                                    <video width="100%" loop="true" controls="controls">
+                                        <source src="question/media/4y.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+							
+							
+                        </div>
+						</div>
+						
+						<hr>
+                        
+              <div class="col-lg-12">
+			    <br><br>
+				<span id="getA3"></span><span id="getPassbutton"></span><br>
+				<a href="index.html" class="btn btn-facebook btn-block"><h2>再玩一遍 !!</h2></a>
+				</div>
+				
+                        <!-- /.container-fluid -->
+                    </div>
+                    <!-- End of Main Content -->
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; DongHwa 2020</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+                </div>
+                <!-- End of Content Wrapper -->
+            </div>
+            <!-- End of Page Wrapper -->
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+            <!-- Logout Modal-->
+            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="logoutModal" role="dialog" tabindex="-1">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                        </div>
+                        <div class="modal-body">
+                            Select "Logout" below if you are ready to end your current session.
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button> <a class="btn btn-primary" href="login.html">Logout</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Core plugin JavaScript-->
+
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Custom scripts for all pages-->
+
+            <script src="js/sb-admin-2.min.js"></script>
+            <!-- Page level plugins -->
+
+            <script src="vendor/chart.js/Chart.min.js"></script>
+            <!-- Page level custom scripts -->
+
+            <script src="js/demo/chart-area-demo.js"></script>
+            <script src="js/demo/chart-pie-demo.js"></script>
+            <script type="text/javascript">
+                window.onload = showFileInfo;
+                function showFileInfo() {
+                    var url = location.href;
+                    if (url.indexOf("?") != -1) {
+                        var ary = url.split("?")[1].split("&");
+                        for (i = 0; i <= ary.length - 1; i++) {
+                            if (ary[i].split("=")[0] == "si") {
+                                var stdId = ary[i].split("=")[1];
+								document.getElementById("getStdId").innerHTML = stdId + " 同學";
+                            }
+                            if (ary[i].split("=")[0] == "q1") {
+                                var a1 = ary[i].split("=")[1];
+								document.getElementById("getA1").innerHTML = a1;
+                            }
+							if (ary[i].split("=")[0] == "q2") {
+                                var a2 = ary[i].split("=")[1];
+								document.getElementById("getA2").innerHTML = a2;
+                            }
+							if (ary[i].split("=")[0] == "q3") {
+                                var a3 = ary[i].split("=")[1];
+								document.getElementById("getA3").innerHTML = a3;
+                            }
+                        }
+                    }
+					
+					var numQues = 3;	//總題數
+					var scoreCorrect = 0;
+					if(a1 == "A"){scoreCorrect++;}
+					if(a2 == "A"){scoreCorrect++;}
+					if(a3 == "B"){scoreCorrect++;}
+					document.getElementById("getScoreCorrect").innerHTML = scoreCorrect;
+					document.getElementById("getScoreWrong").innerHTML = numQues - scoreCorrect;
+					document.getElementById("getScorePercentage").innerHTML = Math.floor(scoreCorrect/numQues*100);
+					
+					if(scoreCorrect == numQues){
+						document.getElementById("getStatusTitle").innerHTML = "挑戰成功!!";
+						document.getElementById("getStatusDescribe").innerHTML = "看完詳細說明後，記得滑到最下面，填資料參加抽獎喔~";
+						document.getElementById("getPassbutton").innerHTML = '<a href="https://www.ndhu.edu.tw/" target="_blank" class="btn btn-google btn-block"><h2>參加抽獎 !!</h2></a>';
+					}
+					else{
+						document.getElementById("getStatusTitle").innerHTML = "挑戰失敗QQ";
+						document.getElementById("getStatusDescribe").innerHTML = '別氣餒 !!<br>看完下面得的詳細說明後，<a href="welcome.html">再試一次吧</a> !!';
+					}
+                }
+            </script>
+        </div>
+    </body>
+</html>
