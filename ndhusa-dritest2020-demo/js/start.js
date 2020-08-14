@@ -15,11 +15,12 @@ function startQuestions(){
 		return false;
 	}
     var stdId = document.getElementById("inputID").value;
-	var nextUrl = "question/q1.html?si="+idform.formStdID.value + "&sn="+idform.formName.value + "&sc="+idform.formCollege.value + "&sd="+idform.formDept.value;
+	var nextUrl = "question/q1.html?si="+idform.formStdID.value + "&sn="+idform.formName.value + "&sc="+colleges[idform.formCollege.selectedIndex] + "&sd="+idform.formDept.value;
 	window.location.href = nextUrl;
 }
 
 // 系所雙層選單
+var stdCollege, stdDept;
 var colleges=['學院', '理工學院','管理學院', '人文社會科學學院', '花師教育學院', '原住民民族學院', '藝術學院', '環境學院', '海洋科學學院', '共同教育委員會'];
 var collegeSelect=document.getElementById("college-list");
 var inner="";

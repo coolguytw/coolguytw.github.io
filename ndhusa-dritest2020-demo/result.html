@@ -12,6 +12,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+		</script>
     </head>
     <body id="page-top">
         <script language="javascript">
@@ -175,7 +180,7 @@
                             </li>
                             <li class="nav-item dropdown no-arrow">
                                 <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="userDropdown" role="button">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="getStdId">東華新生</span> <img class="img-profile rounded-circle" src="https://www.ndhu.edu.tw/var/file/0/1000/img/8/LOGO_NDHU.png" />
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="getStdId">東華新生</span> <img class="img-profile rounded-circle" src="img/userImg.png" />
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div aria-labelledby="userDropdown" class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
@@ -197,6 +202,7 @@
           <p class="mb-4">
 		  <span id="getStatusDescribe">請稍候...</span>
 		  </p>
+		  
 
           <div class="row">
 
@@ -371,9 +377,9 @@
                         
               <div class="col-lg-12">
 			    <br><br>
-				<span id="getA3"></span><span id="getPassbutton"></span><br>
+				<span id="getPassbutton"></span><br>
 				<a href="start.html" class="btn btn-facebook btn-block"><h2>再玩一遍 !!</h2></a>
-				</div>
+				</div>	
 				
                         <!-- /.container-fluid -->
                     </div>
@@ -393,18 +399,23 @@
             <!-- End of Page Wrapper -->
             <!-- Scroll to Top Button-->
             <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
-            <!-- Logout Modal-->
-            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="logoutModal" role="dialog" tabindex="-1">
+            <!-- Winner Notification-->
+            <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="WinnerNotification" role="dialog" tabindex="-1">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">挑戰成功!!</h5>
                             <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
                         </div>
                         <div class="modal-body">
-                            Select "Logout" below if you are ready to end your current session.
+							抽獎登記已完成<br/>
+							提醒您! 若多次填寫，仍只有一次抽獎機會喔!!<br/><br/>
+							姓名：<span id="WinnerName"></span><br/>
+							學號：<span id="WinnerStdId"></span><br/>
+							系所：<span id="WinnerDept"></span><br/>
+							時間：<span id="WinnerTime"></span>
                         </div>
-                        <div class="modal-footer"><button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button> <a class="btn btn-primary" href="login.html">Logout</a></div>
+                        <div class="modal-footer"><button class="btn btn-primary" data-dismiss="modal">確定</button></div>
                     </div>
                 </div>
             </div>
@@ -421,63 +432,10 @@
 
             <script src="vendor/chart.js/Chart.min.js"></script>
             <!-- Page level custom scripts -->
-
+			<script src="js/result.js"></script>
             <script src="js/demo/chart-area-demo.js"></script>
             <script src="js/demo/chart-pie-demo.js"></script>
-            <script type="text/javascript">
-                window.onload = showFileInfo;
-                function showFileInfo() {
-                    var url = location.href;
-                    if (url.indexOf("?") != -1) {
-                        var ary = url.split("?")[1].split("&");
-                        for (i = 0; i <= ary.length - 1; i++) {
-                            if (ary[i].split("=")[0] == "si") {
-                                var stdId = ary[i].split("=")[1];
-								document.getElementById("getStdId").innerHTML = stdId + " 同學";
-								document.getElementById("getStdId2").innerHTML = stdId;
-                            }
-                            if (ary[i].split("=")[0] == "q1") {
-                                var a1 = ary[i].split("=")[1];
-								document.getElementById("getA1").innerHTML = a1;
-                            }
-							if (ary[i].split("=")[0] == "q2") {
-                                var a2 = ary[i].split("=")[1];
-								document.getElementById("getA2").innerHTML = a2;
-                            }
-							if (ary[i].split("=")[0] == "q3") {
-                                var a3 = ary[i].split("=")[1];
-								document.getElementById("getA3").innerHTML = a3;
-                            }
-                        }
-                    }
-					
-					var numQues = 3;	//總題數
-					var scoreCorrect = 0;
-					if(a1 == "A"){scoreCorrect++;}
-					if(a2 == "A"){scoreCorrect++;}
-					if(a3 == "B"){scoreCorrect++;}
-					document.getElementById("getScoreCorrect").innerHTML = scoreCorrect;
-					document.getElementById("getScoreWrong").innerHTML = numQues - scoreCorrect;
-					document.getElementById("getScorePercentage").innerHTML = Math.floor(scoreCorrect/numQues*100);
-					
-					if(scoreCorrect == numQues){
-						document.getElementById("getStatusTitle").innerHTML = "挑戰成功!!";
-						document.getElementById("getStatusDescribe").innerHTML = "看完詳細說明後，記得滑到最下面，填資料參加抽獎喔~";
-						document.getElementById("getPassbutton").innerHTML = '<a href="https://www.ndhu.edu.tw/" target="_blank" class="btn btn-google btn-block"><h2>參加抽獎 !!</h2></a>';
-					}
-					else{
-						document.getElementById("getStatusTitle").innerHTML = "挑戰失敗QQ";
-						document.getElementById("getStatusDescribe").innerHTML = '別氣餒 !!<br>看完下面得的詳細說明後，<a href="start.html">再試一次吧</a> !!';
-					}
-					
-					var months = "JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC".split(",");
-					var today = new Date();
-					//var currentDateTime = today
-					var currentDateTime = months[today.getMonth()]+"-"+ today.getDate()+"-"+ today.getFullYear() +" "+ today.getHours()+":"+today.getMinutes();
-
-					document.getElementById("getTimeNow").innerHTML = currentDateTime;
-                }
-            </script>
+			
         </div>
     </body>
 </html>

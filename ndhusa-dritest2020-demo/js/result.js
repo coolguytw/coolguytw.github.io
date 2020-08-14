@@ -4,30 +4,35 @@ var numQues = 3;	//總題數
 var sheetAPI = "https://script.google.com/macros/s/AKfycbyR0pznyC-Jcv00aLGMXg_wyPs_mGiCQIEvIlKAff7516n8D1g/exec";	// Sheet API
 var correctAns = ["A", "A", "B"];	// 正解
 
-
 var userAns = [];
 var scoreCorrect, scoreWrong, scorePercentage;
-var stdId;
+var stdId, stdName, stdCollege, stdDept, stdIp;
 var today = new Date();
 var currentDate, currentTime;
+
+$.get("http://ipinfo.io", function(response) {
+	stdIp = response.ip;
+}, "jsonp");
 
 function bootFunc() {
 	urlTargetsDetect();
 	scoreCalculate();
 	detectCurrentDayAndTime();
-	send();
+	sendReport();
 	document.getElementById("getScoreCorrect").innerHTML = scoreCorrect;
 	document.getElementById("getScoreWrong").innerHTML = scoreWrong;
 	document.getElementById("getScorePercentage").innerHTML = scorePercentage;
 	document.getElementById("getTimeNow").innerHTML = currentDate + " " + currentTime;
-	document.getElementById("getStdId").innerHTML = stdId + " 同學";
+	document.getElementById("getStdId").innerHTML = stdName + " 同學";
 	document.getElementById("getStdId2").innerHTML = stdId;
-	document.getElementById("showFormStdId").innerHTML = stdId;
-	document.getElementById("showFormTimeNow").innerHTML = currentDate + " " + currentTime;
+	document.getElementById("WinnerStdId").innerHTML = stdId;
+	document.getElementById("WinnerName").innerHTML = stdName;
+	document.getElementById("WinnerDept").innerHTML = stdDept;
+	document.getElementById("WinnerTime").innerHTML = currentDate + " " + currentTime;
 	if(scoreCorrect == numQues){
 		document.getElementById("getStatusTitle").innerHTML = "挑戰成功!!";
 		document.getElementById("getStatusDescribe").innerHTML = "看完詳細說明後，記得滑到最下面，填資料參加抽獎喔~";
-		document.getElementById("getPassbutton").innerHTML = '<button id="openFormButton" style="display:none" class="btn btn-google btn-block" data-target="#WinnerInfoForm" data-toggle="modal"><h2>參加抽獎 !!</h2></button>';
+		document.getElementById("getPassbutton").innerHTML = '<button id="openFormButton" style="display:none" class="btn btn-google btn-block" data-target="#WinnerNotification" data-toggle="modal"><h2>參加抽獎 !!</h2></button>';
 		document.getElementById("openFormButton").click();
 	}
 	else{
@@ -47,7 +52,36 @@ function scoreCalculate() {
 	scorePercentage = Math.floor(scoreCorrect/numQues*100);
 }
 
+// Report Sender
+function sendReport() {
+	//let stdName = document.querySelector('#formNameValue').value;
+	//let stdDept = document.querySelector('#formDeptValue').value;
+  $.ajax({
+    url: sheetAPI,
+    data: {
+		"date":	currentDate,
+		"time":	currentTime,
+		"score":scoreCorrect,
+		"stdid":stdId,
+		"name":stdName,
+		"college":stdCollege,
+		"dept":	stdDept,
+		"ip":	stdIp,
+		"q1":	userAns[0],
+        "q2":	userAns[1],
+        "q3":	userAns[2],
+    },
+    success: function(response) {
+      if(response == "Y"){
+      }
+	  else{
+		alert("錯誤代碼 NDHU-005!\n請洽學生會粉專");
+	  }
+    }
+  })
+}
 
+/*
 // Winner Info Form
 let sendButton = document.querySelector('#formSubmit');
 function send() {
@@ -59,14 +93,14 @@ function send() {
 		"stdid": stdId,
 		"date":	currentDate,
 		"time":	currentTime,
-		"ip":	"TESTING",
+		"ip":	stdIp,
 		"score":scoreCorrect,
 		"q1":	userAns[0],
         "q2":	userAns[1],
         "q3":	userAns[2],
     },
     success: function(response) {
-      if(response == "成功"){
+      if(response == "Y"){
         alert("資料填寫成功!");
 		document.getElementById("openFormClose").click();
       }
@@ -77,6 +111,7 @@ function send() {
   })
 }
 sendButton.addEventListener('click', send);
+*/
 
 // URL Targets Detect
 function urlTargetsDetect() {
@@ -87,10 +122,10 @@ function urlTargetsDetect() {
 			var nameTarget = ary[i].split("=")[0];
 			var nameTargetValue = ary[i].split("=")[1];
 			//if (nameTarget == "si") {stdId = nameTargetValue;}
-			if (nameTarget == "si") {
-				stdId = decodeURIComponent(nameTargetValue);
-			}
-			else if (nameTarget == "sn") {stdN = nameTargetValue.replace(/%20/g," ");}
+			if (nameTarget == "si") {stdId = decodeURIComponent(nameTargetValue);}
+			else if (nameTarget == "sn") {stdName = decodeURIComponent(nameTargetValue);}
+			else if (nameTarget == "sc") {stdCollege = decodeURIComponent(nameTargetValue);}
+			else if (nameTarget == "sd") {stdDept = decodeURIComponent(nameTargetValue);}
 			else{
 				for (j=0; j<numQues; j++){
 					var nameQues = "q" + (j+1);
