@@ -25,9 +25,6 @@
   <div class="container">
 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
-
-      <div class="col-xl-10 col-lg-12 col-md-9">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
@@ -38,11 +35,25 @@
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-2"><sub>東ＸＸＸ會</sub><br />道路安全測驗</h1>
-                    <p class="mb-4">Only for Demo<br>新生完成測驗<br>多項大獎等你抽</p>
+                    <p class="mb-4">Only for Demo<br>新生完成測驗，多項大獎等你抽</p>
                   </div>
                   <form class="user" name="idform">
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="inputID" name="formStdID" placeholder="請輸入學號">
+
+				    <div class="form-group row">
+						<div class="col-sm-6 mb-3 mb-sm-0">
+						  <input type="text" class="form-control" id="inputID" name="formStdID" placeholder="學號">
+						</div>
+						<div class="col-sm-6">
+						  <input type="text" class="form-control" id="inputName" name="formName" placeholder="姓名">
+						</div>
+					</div>
+
+					<div class="form-group">	  
+						<select id="college-list" name="formCollege" onchange="changeCollege(this.selectedIndex)" class="form-control"></select>
+					</div>
+					
+					<div class="form-group" >	
+						<select id="sector-list" name="formDept" class="form-control"></select>
                     </div>
                     <a href="#" class="btn btn-primary btn-user btn-block" onclick="startQuestions();">
                       進入測驗
@@ -56,11 +67,11 @@
               </div>
             </div>
           </div>
-        </div>
+        
 
       </div>
 
-    </div>
+    
 
   </div>
 
@@ -73,42 +84,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-  
-<script type="text/javascript">
-window.onload = checkIdStatus;
-function checkIdStatus() {
-	var url = location.href;
-	var idExisted = false;
-	if (url.indexOf("?") != -1) {
-		var stdIdFilled = "";
-		var ary = url.split("?")[1].split("&");
-		for (i = 0; i <= ary.length - 1; i++) {
-			if (ary[i].split("=")[0] == "formStdID") {
-				idExisted = true;
-				stdIdFilled = ary[i].split("=")[1];
-			}
-		}
-	}
-	if(idExisted == true){
-		idform.formStdID.value = stdIdFilled;
-		startQuestions();
-	}
-}
-</script>
-
-<script type="text/javascript">
-function startQuestions(){
-	if (idform.formStdID.value.length!=9)
-	{
-		alert("請正確填寫本校\n9碼學號");
-		myform.title.focus();
-		return false;
-	}
-    var stdId = document.getElementById("inputID").value;
-	var nextUrl = "question/q1.html?si=" + stdId;
-	window.location.href = nextUrl;
-}
-</script>
+  <!-- Custom scripts for this pages-->
+  <script src="js/start.js"></script>
 
 </body>
 
