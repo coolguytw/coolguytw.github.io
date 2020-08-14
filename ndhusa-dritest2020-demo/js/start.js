@@ -14,8 +14,9 @@ function startQuestions(){
 		alert("請正確填寫\n" + losedInfoAlert);
 		return false;
 	}
+	detectCurrentDayAndTime();
     var stdId = document.getElementById("inputID").value;
-	var nextUrl = "question/q1.html?si="+idform.formStdID.value + "&sn="+idform.formName.value + "&sc="+colleges[idform.formCollege.selectedIndex] + "&sd="+idform.formDept.value;
+	var nextUrl = "question/q1.html?si="+idform.formStdID.value + "&sn="+idform.formName.value + "&sc="+colleges[idform.formCollege.selectedIndex] + "&sd="+idform.formDept.value + "&ts="+currentTime;
 	window.location.href = nextUrl;
 }
 
@@ -51,7 +52,16 @@ function changeCollege(index){
 }
 changeCollege(document.getElementById("college-list").selectedIndex);
 
-// 
+// Current Day and Time
+var today = new Date();
+var currentTime;
+function detectCurrentDayAndTime() {
+	currentTime = paddingLeft(today.getHours(),2)+":"+paddingLeft(today.getMinutes(),2)+":"+paddingLeft(today.getSeconds(),2);
+}
+function paddingLeft(str,lenght){
+	if(String(str).length >= lenght){return str;}
+	else{return paddingLeft("0"+str,lenght);}
+}
 
 
 /*
