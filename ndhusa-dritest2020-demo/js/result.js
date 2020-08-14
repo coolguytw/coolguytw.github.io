@@ -10,10 +10,7 @@ var stdId, stdName, stdCollege, stdDept, stdIp;
 var today = new Date();
 var currentDate, currentTime;
 
-$.get("http://ipinfo.io", function(response) {
-	alert(response.ip);
-	stdIp = response.ip;
-}, "jsonp");
+
 
 function bootFunc() {
 	urlTargetsDetect();
@@ -57,6 +54,10 @@ function scoreCalculate() {
 function sendReport() {
 	//let stdName = document.querySelector('#formNameValue').value;
 	//let stdDept = document.querySelector('#formDeptValue').value;
+	$.get("http://ipinfo.io", function(response) {
+		alert(response.ip);
+		stdIp = response.ip;
+	}, "jsonp");
   $.ajax({
     url: sheetAPI,
     data: {
