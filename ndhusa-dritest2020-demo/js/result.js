@@ -8,7 +8,7 @@ var userAns = [];
 var scoreCorrect, scoreWrong, scorePercentage;
 var stdId, stdName, stdCollege, stdDept, stdIp;
 var today = new Date();
-var currentDate, currentTime;
+var currentDate, currentTime, startTime;
 
 
 
@@ -54,21 +54,17 @@ function scoreCalculate() {
 function sendReport() {
 	//let stdName = document.querySelector('#formNameValue').value;
 	//let stdDept = document.querySelector('#formDeptValue').value;
-	$.get("http://ipinfo.io", function(response) {
-		alert(response.ip);
-		stdIp = response.ip;
-	}, "jsonp");
   $.ajax({
     url: sheetAPI,
     data: {
 		"date":	currentDate,
-		"time":	currentTime,
+		"timeStart": startTime,
+		"timeEnd":	 currentTime,
 		"score":scoreCorrect,
 		"stdid":stdId,
 		"name":stdName,
 		"college":stdCollege,
 		"dept":	stdDept,
-		"ip":	stdIp,
 		"q1":	userAns[0],
         "q2":	userAns[1],
         "q3":	userAns[2],
@@ -128,6 +124,7 @@ function urlTargetsDetect() {
 			else if (nameTarget == "sn") {stdName = decodeURIComponent(nameTargetValue);}
 			else if (nameTarget == "sc") {stdCollege = decodeURIComponent(nameTargetValue);}
 			else if (nameTarget == "sd") {stdDept = decodeURIComponent(nameTargetValue);}
+			else if (nameTarget == "ts") {startTime = decodeURIComponent(nameTargetValue);}
 			else{
 				for (j=0; j<numQues; j++){
 					var nameQues = "q" + (j+1);
