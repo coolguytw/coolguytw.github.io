@@ -11,6 +11,7 @@ var today = new Date();
 var currentDate, currentTime;
 
 $.get("http://ipinfo.io", function(response) {
+	alert(response.ip);
 	stdIp = response.ip;
 }, "jsonp");
 
