@@ -16,7 +16,7 @@ function startQuestions(){
 	}
 	detectCurrentDayAndTime();
     var stdId = document.getElementById("inputID").value;
-	var nextUrl = "question/q1.html?si="+idform.formStdID.value + "&sn="+idform.formName.value + "&sc="+colleges[idform.formCollege.selectedIndex] + "&sd="+idform.formDept.value + "&ts="+currentTime;
+	var nextUrl = "question/q1.html?si="+idform.formStdID.value.toUpperCase() + "&sn="+idform.formName.value + "&sc="+colleges[idform.formCollege.selectedIndex] + "&sd="+idform.formDept.value + "&ts="+currentTime;
 	window.location.href = nextUrl;
 }
 
