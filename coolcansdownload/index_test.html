@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Fractal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121209566-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-121209566-2');
+		</script>
+		<title>酷冠子下載服務</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+		<link href="favicon.ico" rel="bookmark"/>
+		<link href="apple-touch-icon.png" rel="apple-touch-icon" type="image/png"/>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="content">
+					<h1><div id="getFileName_title"></div></h1>
+					<p>酷冠子BLOG</p>
+					
+					<ul class="actions">
+						<!-- <li><a href="#" class="button primary icon solid fa-download">Download</a></li> -->
+						<li><a href="#propaganda" class="button icon solid fa-chevron-down scrolly">下載按鈕在下面 Download Link at Bottom</a></li>
+					</ul>
+				</div>
+				<div class="image phone"><div class="inner"><img src="images/screen.jpeg" alt="" /></div></div>
+			</header>
+
+		<!-- Propaganda -->
+			<section id="propaganda" class="wrapper style2">
+				<div class="inner" style="text-align:center;">
+					<h2><b>PROPAGANDA</b></h2>
+					<p>借我點時間宣傳一下，合理吧 XDD<br/>拜託幫忙看一下啦<br/>有活動需要幫忙宣傳的也歡迎來 <a href="https://coolcans.blogspot.com/p/contact.html" target="_blank">這邊</a> 告知喔</p>
+					<hr/>
+				</div>
+				<div class="inner alt">
+				
+					<section class="spotlight">
+						<div class="image">
+							<a href="https://www.facebook.com/DSC.NDHU"><img src="images/dscndhu.png"/></a>
+						</div>
+						<div class="content">
+							<h3><a href="https://www.facebook.com/DSC.NDHU">DSC NDHU</a></h3>
+							<p>Google Developers 學生開發者社群計畫<br/>Developer Student Club - National Dong Hwa University<br/><br/>
+							<a href="https://www.facebook.com/DSC.NDHU">成員火熱招募中!!</a><br/>對程式開發技術有興趣的你千萬別錯過!!
+							</p>
+						</div>
+					</section>
+					
+					<section class="spotlight">
+						<div class="image">
+							<img src="images/GoodLuck.jpg"/>
+						</div>
+						<div class="content">
+							<h3>你已被期末好運企鵝造訪</h3>
+							<p>感謝好運企鵝讓大家的期末都安然度過<br/>還會毛毛澎澎又香香<br/>Good luck with your final exam</p>
+						</div>
+					</section>
+				</div>
+			</section>
+
+		<!-- File Downloads -->
+			<section id="filedowns" class="wrapper style2 special">
+				<h2><b>FILE DOWNLOADS</b></h2>
+				<div class="inner">
+				<div class="table-wrapper">
+					<table>
+
+						<tbody>
+							<tr>
+								<td><b>檔案名稱 FileName</b></td>
+								<td><div id="getFileName"></div></td>
+							</tr>
+							<tr>
+								<td><b>隸屬課程 Course</b></td>
+								<td><div id="getFileSubject"></div></td>
+							</tr>
+							<tr>
+								<td><b>詳細資料 Details</b></td>
+								<td><div id="getFileDetail"></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>我是東華乖寶寶，我的作業不抄襲<br/>I solemnly swear that I will NOT plagiarize</p>
+				<a onclick="gotoNextURL()" class="button primary fit icon solid fa-download">檔案下載 Download</a>
+				<br/>
+				<br/><br/>
+				<script type="text/javascript">
+				cv_ad_options = {
+				  ad_slot_id: "9b5dcf1249d0feb248dd95d6671b83ed",
+				  ad_width: "728",
+				  ad_height: "90",
+				  mode: "production"
+				};
+				</script><script text="text/javascript" src="//cdn.vbtrax.com/adslots/va.ads.js"></script>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<p class="copyright">&copy; Copyright <a href="https://coolcans.blogspot.com">酷冠子BLOG</a> All Rights Reserved</p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				window.onload=showFileInfo;
+				function showFileInfo(){
+					var url = location.href;
+					if(url.indexOf('?')!=-1){
+						var fileName = "";
+						var fileSubject = "";
+						var fileDetail = "";
+						var ary = url.split('?')[1].split('&');
+						for(i=0;i<=ary.length-1;i++){
+							if(ary[i].split('=')[0] == 'fileName'){
+								fileName = ary[i].split('=')[1];
+							}
+							if(ary[i].split('=')[0] == 'fileSubject'){
+								fileSubject = ary[i].split('=')[1];
+							}
+							if(ary[i].split('=')[0] == 'fileDetail'){
+								fileDetail = ary[i].split('=')[1];
+							}
+						}
+					}
+					document.getElementById("getFileName").innerHTML = fileName;
+					document.getElementById("getFileName_title").innerHTML = fileName;
+					document.getElementById("getFileSubject").innerHTML = fileSubject;
+					document.getElementById("getFileDetail").innerHTML = fileDetail;
+				}
+				
+				function gotoNextURL(){
+					var url = location.href;
+					if(url.indexOf('?')!=-1){
+						var nextURL = "";
+						var ary = url.split('?')[1].split('&');
+						for(i=0;i<=ary.length-1;i++){
+							if(ary[i].split('=')[0] == 'continue')
+								nextURL = ary[i].split('=')[1];
+						}
+					}
+					if(!nextURL){
+						alert("糟糕!\n連結無效\n請洽詢酷哥\n\nOops!\nInvalid link.\nPlease contact the webmaster CoolGuy.");
+					}
+					else{
+						window.location.href=nextURL;
+					}
+				}
+			</script>
+	</body>
+</html>
