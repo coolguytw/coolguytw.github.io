@@ -73,14 +73,7 @@
 					</section>
 				
 				<section class="spotlight">
-					<script type="text/javascript">
-					cv_ad_options = {
-					  ad_slot_id: "9b5dcf1249d0feb248dd95d6671b83ed",
-					  ad_width: "364",
-					  ad_height: "90",
-					  mode: "production"
-					};
-					</script><script text="text/javascript" src="//cdn.vbtrax.com/adslots/va.ads.js"></script>
+					<script type="text/javascript" src="//js1.bloggerads.net/ShowBanner.aspx?blogid=20200902000005" async></script>
 				</section>
 				
 				</div>
@@ -140,13 +133,13 @@
 						var ary = url.split('?')[1].split('&');
 						for(i=0;i<=ary.length-1;i++){
 							if(ary[i].split('=')[0] == 'fileName'){
-								fileName = ary[i].split('=')[1];
+								fileName = decodeURIComponent( ary[i].split('=')[1] );
 							}
 							if(ary[i].split('=')[0] == 'fileSubject'){
-								fileSubject = ary[i].split('=')[1];
+								fileSubject = decodeURIComponent( ary[i].split('=')[1] );
 							}
 							if(ary[i].split('=')[0] == 'fileDetail'){
-								fileDetail = ary[i].split('=')[1];
+								fileDetail = decodeURIComponent( ary[i].split('=')[1] );
 							}
 						}
 					}
